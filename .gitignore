@@ -1,6 +1,5 @@
-.idea/**
-.idea
-bower_components/*
-node_modules/*
-bower.json
-wiredep.js
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
