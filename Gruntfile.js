@@ -19,14 +19,14 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
-  grunt.loadNpmTasks('grunt-build-control');
-  var pkg = require('./package.json');
-
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+
+  grunt.loadNpmTasks('grunt-build-control');
+  var pkg = require('./package.json');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
