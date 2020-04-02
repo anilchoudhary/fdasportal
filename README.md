@@ -1,8 +1,12 @@
-# NAAC_Portal_Frontend
-Frontend for the GGSIPU Faculty Data Acquisition Portal Portal
+# fdasportal
 
-```
-git clone <clone-link>
-cd NAAC_Portal_Frontend
-python -m SimpleHTTPServer 8080 (or http.server 8080) # for python 3
-```
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.16.0.
+
+## Build & development
+
+Run `grunt` for building and `grunt serve` for preview.
+
+## Testing
+
+Running `grunt test` will run the unit tests with karma.
