@@ -1,0 +1,224 @@
+<section ng-include="'./app/views/partials/save.html'"></section>
+<table>
+  <tbody>
+
+    <!-- Publication Title -->
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Title of Book Chapter
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Enter Chapter title." id="bookchapterTitle" type="text" class="validate" ng-model="data.title" name="bookchapterTitle" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.bookchapterTitle.$error.minlength || naacForm.bookchapterTitle.$error.maxlength" class="error">Bookchapter title length should be between 3 and 100.</span>
+          <span ng-show="naacForm.bookchapterTitle.$touched && naacForm.bookchapterTitle.$error.required" class="error">Field cannot be empty</span>
+        </div>
+      </td>
+
+    </tr>
+
+    <!-- Name of Publisher-->
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Book Title with Publisher
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Enter book and publisher name." id="bookchapterPublisher" type="text" class="validate" ng-model="data.book_title_and_publisher" name="bookchapterPublisher" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.bookchapterPublisher.$error.minlength || naacForm.bookchapterPublisher.$error.maxlength" class="error">Publisher name should be  3 to 100 character long. </span>
+          <span ng-show="naacForm.bookchapterPublisher.$touched && naacForm.bookchapterPublisher.$error.required" class="error">Field cannot be empty</span>
+
+        </div>
+      </td>
+
+    </tr>
+
+
+    <!-- Publication Volume Number -->
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Page No.
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Enter page no." id="bookchapterPageNo" type="number" class="validate" ng-model="data.page_no" name="bookchapterPageNo" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.bookchapterPageNo.$error.minlength || naacForm.bookchapterPageNo.$error.maxlength" class="error">Page no. should be  3 to 100 character long. </span>
+          <span ng-show="naacForm.bookchapterPageNo.$touched && naacForm.bookchapterPageNo.$error.required" class="error">Field cannot be empty</span>
+
+        </div>
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          ISBN No.
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Enter book ISBN no." id="bookchapterISBN" type="number" class="validate" ng-model="data.isbn" name="bookchapterISBN" ng-minlength="10" ng-maxlength="13" required>
+          <span ng-show="naacForm.bookchapterISBN.$error.minlength || naacForm.bookchapterISBN.$error.maxlength" class="error">ISBN should be of 10 or 13 digits long. </span>
+          <span ng-show="naacForm.bookchapterISBN.$touched && naacForm.bookchapterISBN.$error.required" class="error">Field cannot be empty</span>
+
+        </div>
+      </td>
+
+    </tr>
+
+
+    <!-- Publication Indexing -->
+    <tr>
+
+      <td>
+
+        <div class="input-field col s4 fields">
+          Indexing
+        </div>
+        <div class="input-field col s8">
+          <select name="bookchapterIndexing" required ng-model="data.indexing" id="bookchapterIndexing" multiple>
+                      <option value="" disabled selected>Choose your option</option>
+<option value="Science Citation Index Expanded (SciSearch)">Science Citation Index Expanded (SciSearch)</option>
+<option value="Journal Citation Reports/Science Edition">Journal Citation Reports/Science Edition</option>
+<option value="SCOPUS">SCOPUS</option>
+<option value="INSPEC">INSPEC</option>
+<option value="Google Scholar">Google Scholar</option>
+<option value="Academic OneFile">Academic OneFile</option>
+<option value="ACM Digital Library">ACM Digital Library</option>
+<option value="Current Abstracts">Current Abstracts</option>
+<option value="Current Contents Collections / Electronics & Telecommunications Collection">Current Contents Collections / Electronics & Telecommunications Collection</option>
+<option value="EBSCO Applied Science & Technology Source">EBSCO Applied Science & Technology Source</option>
+<option value="EBSCO Associates Programs Source">EBSCO Associates Programs Source</option>
+<option value="EBSCO Computer Science Index">EBSCO Computer Science Index</option>
+<option value="EBSCO Computers & Applied Sciences Complete">EBSCO Computers & Applied Sciences Complete</option>
+<option value="EBSCO Engineering Source">EBSCO Engineering Source</option>
+<option value="EBSCO Military Transition Support Center">EBSCO Military Transition Support Center</option>
+<option value="EBSCO Science & Technology Collection">EBSCO Science & Technology Collection</option>
+<option value="EBSCO STM Source">EBSCO STM Source</option>
+<option value="EBSCO TOC Premier">EBSCO TOC Premier</option>
+<option value="EBSCO Vocational Studies">EBSCO Vocational Studies</option>
+<option value="I-Compendex">I-Compendex</option>
+<option value="Expanded Academic">Expanded Academic</option>
+<option value="OCLC">OCLC</option>
+<option value="PASCAL">PASCAL</option>
+<option value="SCImago">SCImago</option>
+<option value="Summon by ProQuest">Summon by ProQuest</option>
+<option value="Web of Science">Web of Science</option>
+<option value="PubMed">PubMed</option>
+<option value="Indian Citation Index">Indian Citation Index</option>
+
+          </select>
+          <!-- <input placeholder="Indexing" id="bookchapterIndexing" type="text" class="validate" ng-model="data.indexing" name="bookchapterIndexing" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.bookchapterIndexing.$error.minlength || naacForm.bookchapterIndexing.$error.maxlength" class="error">Indexing should be  3 to 100 character long. </span>
+          <span ng-show="naacForm.bookchapterIndexing.$touched && naacForm.bookchapterIndexing.$error.required" class="error">Field cannot be empty</span> -->
+
+        </div>
+      </td>
+
+    </tr>
+
+
+
+<!-- Publication Year -->
+
+<tr>
+
+  <td>
+
+    <div class="input-field col s6 fields">
+      Month And Year
+    </div>
+    <div class="input-field col s3">
+      <select name="bookchapterMonth" ng-model="data.month" required>
+        <option value="" disabled selected>Choose Month</option>
+        <option value="jan">January</option>
+        <option value="feb">February</option>
+        <option value="mar">March</option>
+        <option value="apr">April</option>
+        <option value="may">May</option>
+        <option value="june">June</option>
+        <option value="july">July</option>
+        <option value="aug">August</option>
+        <option value="sep">September</option>
+        <option value="oct">October</option>
+        <option value="nov">November</option>
+        <option value="dec">December</option>
+      </select>
+    </div>
+    <div class="input-field col s3">
+      <select name="bookChapteryear" ng-model="data.year" required>
+        <option value="" disabled selected>Choose Year</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+
+      </select>
+    </div>
+  </td>
+
+</tr>
+
+<!-- Conference Month -->
+
+
+
+    <!-- Book Co-Author -->
+<tr>
+
+  <td>
+    <div class="input-field col s2 fields">
+          Co Authors
+    </div>
+    <div class="col s10">
+      <br><br>
+      <div class="row" ng-repeat="(k, v) in data.coauthor">
+        <div class="col m2" style="color: #9e9e9e;font-size: 14px;padding-top: 10px; ">
+          <span>#</span>
+          {{ $index + 1}}
+        </div>
+        <div class="col m4">
+          <input type="text" name="" ng-model="v.name" placeholder="Name">
+        </div>
+        <div class="col m4">
+          <input type="text" name="" ng-model="v.email" placeholder="Email">
+        </div>
+        <div class="col m1" ng-if="v.approved == '0'">
+          <div class="tooltip">?
+            <span class="tooltiptext">Waiting For Confirmation...</span>
+          </div>
+        </div>
+        <div class="col m1">
+          <div ng-click="removecoauthor($index)" class="tooltip red">X
+            <span class="tooltiptext">Remove</span>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="right">
+        <button ng-click="hello()" background-color="#1a237e" class="btn waves-effect waves-light no-borders">
+          <i style="font-size:1.2em; line-height:1.2em;" class="fa fa-plus-circle" aria-hidden="true"></i> ADD CO AUTHOR
+        </button>
+      </div>
+  </td>
+</tr>
+
+
+
+
+    </tbody>
+</table>

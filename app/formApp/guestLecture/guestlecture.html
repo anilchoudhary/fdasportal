@@ -1,0 +1,119 @@
+<section ng-include="'./app/views/partials/save.html'"></section>
+<table>
+  <tbody>
+
+    <!-- Publication Title -->
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Nature
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Nature" id="guestlectureNature" type="text" class="validate" ng-model="data.nature" name="guestlectureNature" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.guestlectureNature.$error.minlength || naacForm.guestlectureNature.$error.maxlength" class="error">Length should be between 3 and 100.</span>
+          <span ng-show="naacForm.guestlectureNature.$touched && naacForm.guestlectureNature.$error.required" class="error">Field cannot be empty</span>
+        </div>
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Institute Name
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Institute Name" id="guestlectureInstitute" type="text" class="validate" ng-model="data.institute" name="guestlectureInstitute" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.guestlectureInstitute.$error.minlength || naacForm.guestlectureInstitute.$error.maxlength" class="error">Institute name should be  3 to 100 character long. </span>
+          <span ng-show="naacForm.guestlectureInstitute.$touched && naacForm.guestlectureInstitute.$error.required" class="error">Field cannot be empty</span>
+
+        </div>
+      </td>
+
+    </tr>
+
+
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Date
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Select Date" id="guestlectureDate" type="text" class="datepicker" ng-model="data.date" name="guestlectureDate" required>
+          <span ng-show="naacForm.guestlectureDate.$touched && naacForm.guestlectureDate.$error.required" class="error">Field cannot be empty</span>
+
+        </div>
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+        Topic
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Enter topic of lecture" id="guestlectureTopic" type="text" class="validate" ng-model="data.title" name="guestlectureTopic" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.guestlectureTopic.$error.minlength || naacForm.guestlectureTopic.$error.maxlength" class="error">Length should be 3 to 100 character long. </span>
+          <span ng-show="naacForm.guestlectureTopic.$touched && naacForm.guestlectureTopic.$error.required" class="error">Field cannot be empty</span>
+
+        </div>
+      </td>
+
+    </tr>
+
+
+    <!-- Publication Indexing -->
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Year
+        </div>
+        <div class="input-field col s6">
+          <select name="guestlectureYear" ng-model="data.year" required>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+
+          </select>
+        </div>
+      </td>
+
+    </tr>
+
+
+
+    </tbody>
+</table>
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 6, // Creates a dropdown of 15 years to control year,
+    min: [2012, 0, 01],//controls the  start year and month
+    max: [2018, 2, 01],// controls the end year and month
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+});
+</script>

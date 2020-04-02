@@ -1,0 +1,134 @@
+<section ng-include="'./app/views/partials/save.html'"></section>
+<table>
+  <tbody>
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Patent Name
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Patent Name" id="patentName" type="text" class="validate" ng-model="data.title" name="patentName" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.patentName.$error.minlength || naacForm.patentName.$error.maxlength" class="error">Length should be between 3 and 100.</span>
+          <span ng-show="naacForm.patentName.$touched && naacForm.patentName.$error.required" class="error">Field cannot be empty</span>
+        </div>
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Patenting Agency
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Patenting Agency" id="patentAgency" type="text" class="validate" ng-model="data.patenting_agency" name="patentAgency" ng-minlength="3" ng-maxlength="100" required>
+          <span ng-show="naacForm.patentAgency.$error.minlength || naacForm.patentAgency.$error.maxlength" class="error">Length should be between 3 and 100.</span>
+          <span ng-show="naacForm.patentAgency.$touched && naacForm.patentAgency.$error.required" class="error">Field cannot be empty</span>
+        </div>
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Year of Application
+        </div>
+        <div class="input-field col s6">
+          <select name="patentYear" ng-model="data.year_application" required>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+
+          </select>
+        </div>
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Year of Grant
+        </div>
+        <div class="input-field col s6">
+          <select name="patentYearGrant" ng-model="data.year_grant" required>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+
+          </select>
+          <span ng-show="data.year_grant < data.year_application" class="error">Year of Grant should be later than Year of Application.</span>
+
+        </div>
+      </td>
+
+    </tr>
+
+
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Patent Type
+        </div>
+        <div class="input-field col s6">
+          <select name="patentType" ng-model="data.type" required>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="national">National</option>
+            <option value="international">International</option>
+
+          </select>
+        </div>
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>
+
+        <div class="input-field col s6 fields">
+          Patent Status
+        </div>
+        <div class="input-field col s6">
+          <select name="patentStatus" ng-model="data.status" required>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="applied">Applied</option>
+            <option value="published">Published</option>
+            <option value="awarded">Awarded</option>
+
+          </select>
+        </div>
+      </td>
+
+    </tr>
+
+
+
+    </tbody>
+</table>
