@@ -29,7 +29,7 @@
              <tbody>
                   <tr ng-click="setEmployee(x)" ng-repeat="x in empData | filter : search | filter : validateEmp" id="{{ x.pk }}">
                   <td  class="empDetails">
-                    <img fallback-src="http://via.placeholder.com/350x150" ng-src="{{BACKEND}}/static/images/{{x.pk}}.jpg" class="empImage"></td>
+                    <img fallback-src="https://via.placeholder.com/350x150" ng-src="{{BACKEND}}/static/images/{{x.pk}}.jpg" class="empImage"></td>
                     <td>&nbsp;&nbsp;{{ x.fields.name }}</td>
                     <td>&nbsp;&nbsp;{{ x.pk }}</td>
                    
