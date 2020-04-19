@@ -16,9 +16,9 @@ angular.module('employee')
             data_emp.query({
                 school: sessionStorage.school
             }).$promise.then(function(data){
-                console.log(data)
+                // console.log(data)
                 $scope.empData = data;
-                var prefix = ["Dr","Ms","Mr"];
+                // var prefix = ["Dr","Ms","Mr"];
                 var len = $scope.empData.length;
                 for(var j = 0;j < len;j++){
                     if($scope.empData[j].fields.name.slice(0,2).match(/(Dr.|Dr|Mr|Ms|Mr.|Ms.|Dr .| Ms .|Mr . )/i)){
@@ -43,7 +43,7 @@ angular.module('employee')
             $scope.setEmployee = function (val) {
                 sessionStorage.setItem('loginid', val.pk);
                 $rootScope.loginid = val.pk;
-                console.log(val.pk);
+                // console.log(val.pk);
                 $location.url('/login');
                 Materialize.Toast.removeAll();
             }

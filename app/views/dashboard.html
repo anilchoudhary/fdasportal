@@ -1,4 +1,3 @@
-
 <nav  class="secondary-navbar" style="display: none;">
     <div class="nav-wrapper">
         <ul class="tabs">
@@ -21,28 +20,21 @@
     </div>
 </nav>
 <br><br>
-
 <div id="dash">
     <ng-include src="'./app/views/partials/dashboard.html'" scope="" onload=""></ng-include>
 </div>
-
 <div id="fill">
     <ng-include src="'./app/views/partials/fill_details.html'" scope="" onload=""></ng-include>
 </div>
-
 <div id="faq">
     <ng-include src="'./app/views/partials/faq.html'" scope="" onload=""></ng-include>
 </div>
-
-
 <link rel="stylesheet" type="text/css" href="./app/styles/dashboard.css">
 <script type="text/javascript">
-     $(document).ready(function(){
-    $('ul.tabs').tabs();
-  });
-
-      $(document).ready(function(){
-    $('#dash').click();
-  });
+$(document).ready(function(){
+$('ul.tabs').tabs();
+});
+$(document).ready(function(){
+$('#dash').click();
+});
 </script>
-

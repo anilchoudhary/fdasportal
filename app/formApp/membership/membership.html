@@ -1,143 +1,114 @@
 <section ng-include="'./app/views/partials/save.html'"></section>
 <table>
-  <tbody>
-
-
-    <tr>
-      <td>
-        <div class="input-field col s6 fields">
-          Membership No.
-        </div>
-        <div class="input-field col s6">
-
-          <input placeholder="Membership No." id="membershipNo" type="number" class="validate" ng-model="data.membership_no" name="membershipNo" ng-minlength="3" ng-maxlength="100" required>
-          <span ng-show="naacForm.membershipNo.$error.minlength || naacForm.membershipNo.$error.maxlength" class="error">Length should be between 3 and 100.</span>
-          <span ng-show="naacForm.membershipNo.$touched && naacForm.membershipNo.$error.required" class="error">Field cannot be empty</span>
-
-
-
-        </div>
-      </td>
-    </tr>
-
-
-    <tr>
-      <td>
-        <div class="input-field col s6 fields">
-          Membership Type
-        </div>
-        <div class="input-field col s6">
-          <select name="membershipType" ng-model="data.type" required>
-            <option value="" disabled selected>Choose your option</option>
-            <option value="anually">Anually</option>
-            <option value="lifetime">Lifetime</option>
-
-          </select>
-
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-
-      <td>
-
-        <div class="input-field col s6 fields">
-          Academic Body Name
-        </div>
-        <div class="input-field col s6">
-
-            <input  name="membershipType" ng-model="data.title" type="text" id="autocomplete-input" class="autocomplete" placeholder="Academic Body" required>
-
-          </div>
-      </td>
-
-    </tr>
-
-
-
-    <tr >
-
-      <td>
-
-        <div class="input-field col s6 fields">
-          Start Year
-        </div>
-        <div class="input-field col s6">
-          <select name="start_yearUniversityAgency" ng-model="data.start_year" required>
-            <option value="" disabled selected>Choose your option</option>
-            <option value="2012">2012</option>
-            <option value="2013">2013</option>
-            <option value="2014">2014</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-
-          </select>
-        </div>
-      </td>
-
-    </tr>
-
-
-    <tr ng-if="data.type=='anually'">
-
-      <td>
-
-        <div class="input-field col s6 fields">
-          End Year
-        </div>
-        <div class="input-field col s6">
-          <select name="end_yearUniversityAgency" ng-model="data.end_year" required>
-            <option value="" disabled selected>Choose your option</option>
-            <option value="2012">2012</option>
-            <option value="2013">2013</option>
-            <option value="2014">2014</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-
-          </select>
-          <span ng-show="data.end_year <= data.start_year " class="error">End year should be later than start year.</span>
-        </div>
-      </td>
-      <script type="text/javascript">
-        $(document).ready(function () {
-           $(document).ready(function() {
-                      console.log($('select'));
-                      $('select').material_select();
-                  })
-        })
-      </script>
-
-    </tr>
-
-
-    </tbody>
+<tbody>
+  <tr>
+    <td>
+      <div class="input-field col s6 fields">
+        Membership No.
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="Membership No." id="membershipNo" type="number" class="validate" ng-model="data.membership_no" name="membershipNo" ng-minlength="3" ng-maxlength="100" required>
+        <span ng-show="naacForm.membershipNo.$error.minlength || naacForm.membershipNo.$error.maxlength" class="error">Length should be between 3 and 100.</span>
+        <span ng-show="naacForm.membershipNo.$touched && naacForm.membershipNo.$error.required" class="error">Field cannot be empty</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="input-field col s6 fields">
+        Membership Type
+      </div>
+      <div class="input-field col s6">
+        <select name="membershipType" ng-model="data.type" required>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="anually">Anually</option>
+          <option value="lifetime">Lifetime</option>
+        </select>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="input-field col s6 fields">
+        Academic Body Name
+      </div>
+      <div class="input-field col s6">
+        <input  name="membershipType" ng-model="data.title" type="text" id="autocomplete-input" class="autocomplete" placeholder="Academic Body" required>
+      </div>
+    </td>
+  </tr>
+  <tr >
+    <td>
+      <div class="input-field col s6 fields">
+        Start Year
+      </div>
+      <div class="input-field col s6">
+        <select name="start_yearUniversityAgency" ng-model="data.start_year" required>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+        </select>
+      </div>
+    </td>
+  </tr>
+  <tr ng-if="data.type=='anually'">
+    <td>
+      <div class="input-field col s6 fields">
+        End Year
+      </div>
+      <div class="input-field col s6">
+        <select name="end_yearUniversityAgency" ng-model="data.end_year" required>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+        </select>
+        <span ng-show="data.end_year <= data.start_year " class="error">End year should be later than start year.</span>
+      </div>
+    </td>
+    <script type="text/javascript">
+    $(document).ready(function () {
+    $(document).ready(function() {
+    console.log($('select'));
+    $('select').material_select();
+    })
+    })
+    </script>
+  </tr>
+</tbody>
 </table>
-
 <script type="text/javascript">
-  $('input.autocomplete').autocomplete({
-    data: {
-      "IEEE": null,
-      "ACM": null,
-      "ISTE": null,
-      "IAENG": null,
-        "CSI": null,
-        "IETE": null,
-        "SPRINGER": null,
-      "Any Other, Please Specify": null
-    },
-    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-    onAutocomplete: function(val) {
-      // Callback function when value is autcompleted.
-      console.log("val = ");
-      console.log(val);
-      if(val == "Any Other, Please Specify"){
-        $(".autocomplete").val("");
-      }
-    },
-    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
-  });
+$('input.autocomplete').autocomplete({
+data: {
+"IEEE": null,
+"ACM": null,
+"ISTE": null,
+"IAENG": null,
+"CSI": null,
+"IETE": null,
+"SPRINGER": null,
+"Any Other, Please Specify": null
+},
+limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+onAutocomplete: function(val) {
+// Callback function when value is autcompleted.
+console.log("val = ");
+console.log(val);
+if(val == "Any Other, Please Specify"){
+$(".autocomplete").val("");
+}
+},
+minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+});
 </script>

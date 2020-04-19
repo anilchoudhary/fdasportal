@@ -1,96 +1,90 @@
-
-<!-- preloader -->
-
-
+<!-- preloader from materialize.css -->
 <div class="progress">
-      <div class="indeterminate"></div>
-  </div>
-        
+  <div class="indeterminate"></div>
+</div>
 
 <!-- preloader end -->
-
 <div class="container select" ng-controller="SelCtrl as sel" style="display: none;">
-    <div class="input-field col s12 school">
-
+  <div class="input-field col s12 school">
     <input type="text" name="search" ng-model="search" placeholder="Search..." style="border: 0 !important;text-align: center;background: aliceblue;box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1), 0 0px 0px 0 rgba(0,0,0,0.1), 0 0px 0px 0px rgba(0,0,0,0); -webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,0.1), 0 0px 0px 0 rgba(0,0,0,0.1), 0 0px 0px 0px rgba(0,0,0,0);">
-        <div class="card">
-            <div class="card-content">
-              <span class="card-title bold">Select Your Id</span>
-              <p>
-              <table class="striped" ng-if="empData">
-                    <thead>
-                      <tr class="hovered">
-                          <th>&nbsp;&nbsp;</th>
-                          <th>&nbsp;&nbsp;Name</th>
-                          <th>&nbsp;&nbsp;Employee Id</th>
-                         
-                      </tr>
-                    </thead>
-             <tbody>
-                  <tr ng-click="setEmployee(x)" ng-repeat="x in empData | filter : search | filter : validateEmp" id="{{ x.pk }}">
-                  <td  class="empDetails">
-                    <img fallback-src="https://via.placeholder.com/350x150" ng-src="{{BACKEND}}/static/images/{{x.pk}}.jpg" class="empImage"></td>
-                    <td>&nbsp;&nbsp;{{ x.fields.name }}</td>
-                    <td>&nbsp;&nbsp;{{ x.pk }}</td>
-                   
-                  </tr>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title bold">Select Your Id</span>
+        <p>
+          <table class="striped" ng-if="empData">
+            <thead>
+              <tr class="hovered">
+                <th>&nbsp;&nbsp;</th>
+                <th>&nbsp;&nbsp;Name</th>
+                <th>&nbsp;&nbsp;Employee Id</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-click="setEmployee(x)" ng-repeat="x in empData | filter : search | filter : validateEmp" id="{{ x.pk }}">
+                <td  class="empDetails">
+                <img fallback-src="https://via.placeholder.com/350x150" ng-src="{{BACKEND}}/static/images/{{x.pk}}.jpg" class="empImage"></td>
+                <td>&nbsp;&nbsp;{{ x.fields.name }}</td>
+                <td>&nbsp;&nbsp;{{ x.pk }}</td>
+                
+              </tr>
             </tbody>
-            </table>
-              </p>
-            </div>
-          </div>
-  </div>
+          </table>
+        </p>
+      </div>
     </div>
+  </div>
+</div>
+
 <script type="text/javascript">
-var i = 1;
-  function toast(i){
+    var i = 1;
+    function toast(i){
     if(i == 1){
-      Materialize.toast("Please select your name to login",5000);
-      i++;
+    Materialize.toast("Please select your name to login",5000);
+    i++;
     }
     return;
-  }
+    }
 </script>
 
 
-
 <style type="text/css">
-  tr {
+    tr {
     cursor: pointer;
-  }
-  tr:hover{
+    }
+    tr:hover{
     background: aliceblue;
-  }
+    }
     .preloader-wrapper{
-        position: absolute;
-        top:45%;
-        left: 45%;
+    position: absolute;
+    top:45%;
+    left: 45%;
     }
     .empDetails{
-        padding: 5px;
-        line-height: 0.9;
+    padding: 5px;
+    line-height: 0.9;
     }
     .empImage{
-      width: 100px;
-      height: 100px;
-      border-radius: 100%;
-      border: 5px solid white;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 5px solid white;
     }
-  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:   darkslategrey;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    darkslategrey;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    darkslategrey;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    darkslategrey;
-}
-::-ms-input-placeholder { /* Microsoft Edge */
-   color:    darkslategrey;
-}
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    darkslategrey;
+    opacity:  1;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    darkslategrey;
+    opacity:  1;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    darkslategrey;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+    color:    darkslategrey;
+    }
 </style>

@@ -1,280 +1,271 @@
 <br>
 <div id="test2" class="info container" ng-controller="DashboardCtrl">
-<div class="container">
-    <div id="grad" class="student-card card no-margin" style="margin: 0 !important">
-        <div class=" card-content row">
-            <div class="col m3 no-borders" style="background: white;">
-                <img ng-show="empImg" ng-src="{{empImg}}" style="width: 50%; margin-left: 20%">
-                <img ng-hide="empImg" src="#" style="width: 50%; margin-left: 20%">
-                <button class="btn waves-effect waves-light indigo darken-4 modal-trigger" data-target="modal1">Upload Image
-                <i class="material-icons left">file_upload</i></button>
-            </div>
-            <div class="col m4 no-borders">
-                <div class='greeting'>HELLO</div>
-                <h4 class="light">{{employee.name}}</h4>
-                <div class="teacher-id">{{employee.pk}}</div>
-            </div>
-            <div class="col m3 no-borders" style="background: white;">
-                <button href="#" class="btn waves-effect waves-light indigo darken-4 tooltipped right" data-position="bottom" data-delay="50" data-tooltip="Trouble Filling the Form?" type="button" >Watch Video
-                <i class="material-icons left">switch_video</i>
-                </button>
-            </div>
-            <div class="col m3 no-borders" style="background: white;">
-                <button href="#" class="btn waves-effect waves-light indigo darken-4 right" type="button" ng-click="dashboard()">Dashboard
-                <i class="material-icons left">dashboard</i>
-                </button>
-                <button href="#" class="btn waves-effect waves-light indigo darken-4 logoutButton" type="button" ng-click="logout()">Logout
-                <i class="fa fa-sign-out left"></i>
-                </button>
+    <div class="container">
+        <div id="grad" class="student-card card no-margin" style="margin: 0 !important">
+            <div class=" card-content row">
+                <div class="col m3 no-borders" style="background: white;">
+                    <img ng-show="empImg" ng-src="{{empImg}}" style="width: 50%; margin-left: 20%">
+                    <img ng-hide="empImg" src="#" style="width: 50%; margin-left: 20%">
+                    <button class="btn waves-effect waves-light indigo darken-4 modal-trigger" data-target="modal1">Upload Image
+                    <i class="material-icons left">file_upload</i></button>
+                </div>
+                <div class="col m4 no-borders">
+                    <div class='greeting'>HELLO</div>
+                    <h4 class="light">{{employee.name}}</h4>
+                    <div class="teacher-id">{{employee.pk}}</div>
+                </div>
+                <div class="col m3 no-borders" style="background: white;">
+                    <button href="#" class="btn waves-effect waves-light indigo darken-4 tooltipped right" data-position="bottom" data-delay="50" data-tooltip="Trouble Filling the Form?" type="button" >Watch Video
+                    <i class="material-icons left">switch_video</i>
+                    </button>
+                </div>
+                <div class="col m3 no-borders" style="background: white;">
+                    <button href="#" class="btn waves-effect waves-light indigo darken-4 right" type="button" ng-click="dashboard()">Dashboard
+                    <i class="material-icons left">dashboard</i>
+                    </button>
+                    <button href="#" class="btn waves-effect waves-light indigo darken-4 logoutButton" type="button" ng-click="logout()">Logout
+                    <i class="fa fa-sign-out left"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="row no-margins">
-            <div style="padding:0 0;" class="col m3">
-                <div class="table-title">INFORMATION</div>
-            </div>
-            <div class="col m9">
-                <div class="table-title" style="border: none !important; text-transform: uppercase;">Data Portal for NAAC/NIRF/NBA </div>
-            </div>
-        </div>
-        <div class="row border-top no-margins">
-            <div class="col m3">
-                <ul class="flexed">
-                    <li ng-repeat="info in attributes| orderBy: 'priority'">
-                        <span class="material-icons" style="font-size: 20px;">{{info.icon}}</span>&nbsp;&nbsp;
-                        <div ng-click="setSelected(info.val)" class="time" ng-class="{'grey-text':!isSelected(info)}" >{{ splitAtCaps(info.key) }}</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col m7">
-                <div class="center" style="display: flex; margin-top: 1.5em; margin-bottom: 1em;">
-                    <br>
-                    <div style="flex: 0.8; color: lightslategrey;">
-                    Check this box if you don't wish to add any {{ splitAtCaps(attributes[selected].key) }} details
-                    </div>
-                    &nbsp; &nbsp;
-                    <div style="flex: 0.2">
-                      <input ng-click="setfill()" type="checkbox" id="test5"  ng-model="dontfilldata[dontfillColumn]"/>
-                      <label for="test5"></label>
-                    </div>
+        <div class="card">
+            <div class="row no-margins">
+                <div style="padding:0 0;" class="col m3">
+                    <div class="table-title">INFORMATION</div>
                 </div>
-                <form name="naacForm" novalidate>
-                    <section ng-if="selected == '0' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/awards/award.html'"></section>
-                    <section ng-if="selected == '1' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/book/book.html'"></section>
-                    <section ng-if="selected == '2' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/bookChapters/bookchapter.html'"></section>
-                    <section ng-if="selected == '3' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/conference/conference.html'"></section>
-                    <section ng-if="selected == '4' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/extra/extra.html'"></section>
-                    <section ng-if="selected == '5'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/guestLecture/guestlecture.html'"></section>
-                    <section ng-if="selected == '6'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/journalPaper/journal.html'"></section>
-                    <section ng-if="selected == '7'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/membership/membership.html'"></section>
-                    <section ng-if="selected == '8'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/patents/patent.html'"></section>
-                    <section ng-if="selected == '9'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/professional/professional.html'"></section>
-                    <section ng-if="selected == '10'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/projects/project.html'"></section>
-                    <section ng-if="selected == '11'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/subjectTaken/subject.html'"></section>
-                    <section ng-if="selected == '12'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/workshop/workshop.html'"></section>
-                </form>
-
-                <div style="margin: 25px auto;">
-                <section ng-include="'./app/views/partials/savebutton.html'"></section>
+                <div class="col m9">
+                    <div class="table-title" style="border: none !important; text-transform: uppercase;">Data Portal for NAAC/NIRF/NBA </div>
                 </div>
-
-
             </div>
-            <div  class="col m2" style="background: lavender;">
-                <div class="center">
-                <section ng-include="'./app/views/partials/help.html'"></section>
+            <div class="row border-top no-margins">
+                <div class="col m3">
+                    <ul class="flexed">
+                        <li ng-repeat="info in attributes| orderBy: 'priority'">
+                            <span class="material-icons" style="font-size: 20px;">{{info.icon}}</span>&nbsp;&nbsp;
+                            <div ng-click="setSelected(info.val)" class="time" ng-class="{'grey-text':!isSelected(info)}" >{{ splitAtCaps(info.key) }}</div>
+                        </li>
+                    </ul>
                 </div>
-                <br>
-                <div ng-if="mySelectedData.length > 0">
-                    <br>
-                    <label>Saved {{splitAtCaps(attributes[selected].key)}} </label>
-                    <BR>
-                    <div ng-if="result!=null && result.pk" ng-repeat="result in mySelectedData track by $index">
-                        <div style="cursor: pointer;border-bottom: 1px solid lightgray;" ng-click="openTheatre($index)" class="listelements no-margins">
-                            <div  style="padding:12px !important" class="card-content result-title">{{result.title }}</div>
-                            <div ng-hide="result.title " style="padding:12px !important" class="card-content result-title">{{result.course }}</div>
+                <div class="col m7">
+                    <div class="center" style="display: flex; margin-top: 1.5em; margin-bottom: 1em;">
+                        <br>
+                        <div style="flex: 0.8; color: lightslategrey;">
+                            Check this box if you don't wish to add any {{ splitAtCaps(attributes[selected].key) }} details
+                        </div>
+                        &nbsp; &nbsp;
+                        <div style="flex: 0.2">
+                            <input ng-click="setfill()" type="checkbox" id="test5"  ng-model="dontfilldata[dontfillColumn]"/>
+                            <label for="test5"></label>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <form name="naacForm" novalidate>
+                    <section ng-if="selected == '0' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/awards/award.html'"></section>
+                <section ng-if="selected == '1' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/book/book.html'"></section>
+            <section ng-if="selected == '2' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/bookChapters/bookchapter.html'"></section>
+        <section ng-if="selected == '3' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/conference/conference.html'"></section>
+    <section ng-if="selected == '4' && !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/extra/extra.html'"></section>
+<section ng-if="selected == '5'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/guestLecture/guestlecture.html'"></section>
+<section ng-if="selected == '6'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/journalPaper/journal.html'"></section>
+<section ng-if="selected == '7'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/membership/membership.html'"></section>
+<section ng-if="selected == '8'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/patents/patent.html'"></section>
+<section ng-if="selected == '9'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/professional/professional.html'"></section>
+<section ng-if="selected == '10'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/projects/project.html'"></section>
+<section ng-if="selected == '11'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/subjectTaken/subject.html'"></section>
+<section ng-if="selected == '12'&& !dontfilldata[dontfillColumn]" data-ng-include src="'./app/formApp/workshop/workshop.html'"></section>
+</form>
+<div style="margin: 25px auto;">
+<section ng-include="'./app/views/partials/savebutton.html'"></section>
+</div>
+</div>
+<div  class="col m2" style="background: lavender;">
+<div class="center">
+<section ng-include="'./app/views/partials/help.html'"></section>
+</div>
+<br>
+<div ng-if="mySelectedData.length > 0">
+<br>
+<label>Saved {{splitAtCaps(attributes[selected].key)}} </label>
+<BR>
+<div ng-if="result!=null && result.pk" ng-repeat="result in mySelectedData track by $index">
+<div style="cursor: pointer;border-bottom: 1px solid lightgray;" ng-click="openTheatre($index)" class="listelements no-margins">
+<div  style="padding:12px !important" class="card-content result-title">{{result.title }}</div>
+<div ng-hide="result.title " style="padding:12px !important" class="card-content result-title">{{result.course }}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function () {
-      $('.modal').modal();
-    })
+$(document).ready(function () {
+$('.modal').modal();
+})
 </script>
 <div id="modal2" class="modal modal-fixed-footer">
-    <div class="modal-content">
-        <h4>Record #{{ selectedResultTheatre + 1}} <i class="fa fa-circle" style="font-size: 0.3em;"></i> {{splitAtCaps(attributes[selected].key)}}
-            <i class="fa fa-close modal-close right" style="font-size: 1em;"></i>
-        </h4>
-        <table>
-            <div class=" col s10 m10">
-            </div>
-            <tbody>
-                <tr ng-hide="value.name=='id' || value.name =='employee'" ng-repeat="(key, value) in form_details[sections[selected]]">
-                    <td ng-show="!value.verbose" style="font-weight: 500">{{value.name}}</td>
-                    <td ng-show="value.verbose" style="font-weight: 500;">{{value.verbose}}</td>
-                    <td ng-if="value.name!='coauthor'">{{results[attributes[selected].key][selectedResultTheatre][value.name]}}</td>
-                    <td ng-if="value.name=='coauthor'">
-                        <br>
-                        <div class="row" ng-repeat="(k, v) in coauthors[attributes[selected].key][selectedResultTheatre] track by $index">
-                            <div class="col m6">
-                                <span>{{v.name}}</span>
-                            </div>
-                            <div class="col m6">
-                                <span>{{v.email}}</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="modal-footer">
-        <a ng-click="setSelectedResult(selectedResultTheatre)" class="modal-close btn waves-effect white-text left">EDIT</a>
-        <a ng-click="delete(selectedResultTheatre)" class="red modal-close btn waves-effect white-text ">DELETE</a>
-    </div>
+<div class="modal-content">
+<h4>Record #{{ selectedResultTheatre + 1}} <i class="fa fa-circle" style="font-size: 0.3em;"></i> {{splitAtCaps(attributes[selected].key)}}
+<i class="fa fa-close modal-close right" style="font-size: 1em;"></i>
+</h4>
+<table>
+<div class=" col s10 m10">
 </div>
-
-
- <!-- modal trigger -->
+<tbody>
+<tr ng-hide="value.name=='id' || value.name =='employee'" ng-repeat="(key, value) in form_details[sections[selected]]">
+<td ng-show="!value.verbose" style="font-weight: 500">{{value.name}}</td>
+<td ng-show="value.verbose" style="font-weight: 500;">{{value.verbose}}</td>
+<td ng-if="value.name!='coauthor'">{{results[attributes[selected].key][selectedResultTheatre][value.name]}}</td>
+<td ng-if="value.name=='coauthor'">
+<br>
+<div class="row" ng-repeat="(k, v) in coauthors[attributes[selected].key][selectedResultTheatre] track by $index">
+<div class="col m6">
+<span>{{v.name}}</span>
+</div>
+<div class="col m6">
+<span>{{v.email}}</span>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+<a ng-click="setSelectedResult(selectedResultTheatre)" class="modal-close btn waves-effect white-text left">EDIT</a>
+<a ng-click="delete(selectedResultTheatre)" class="red modal-close btn waves-effect white-text ">DELETE</a>
+</div>
+</div>
+<!-- modal trigger -->
 <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Upload Your Photo</h4>
-      <p>
-        <form ng-submit="uploadImage()" enctype="multipart/form-data">
-        <div class="row">
-            <div class="col md10" style="width: 75%;">
-                <div class="file-field input-field">
-                <div class="btn indigo darken-4">
-                    <span>Choose File</span>
-                    <input type="file" files-input ng-model="employeeMeta.image" id="fileUploadForm" class="image" placeholder="Click to Upload File">
-                </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" style="border-bottom: 1px solid green;">
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <button type="submit" class="btn waves-effect indigo darken-4">UPLOAD
-        <i class="material-icons left">file_upload</i></button>
-      </form>
-      </p>
-    </div>
-
-  </div>
-
+<div class="modal-content">
+<h4>Upload Your Photo</h4>
+<p>
+<form ng-submit="uploadImage()" enctype="multipart/form-data">
+<div class="row">
+<div class="col md10" style="width: 75%;">
+<div class="file-field input-field">
+<div class="btn indigo darken-4">
+<span>Choose File</span>
+<input type="file" files-input ng-model="employeeMeta.image" id="fileUploadForm" class="image" placeholder="Click to Upload File">
+</div>
+<div class="file-path-wrapper">
+<input class="file-path validate" type="text" style="border-bottom: 1px solid green;">
+</div>
+</div>
+</div>
+</div>
+<button type="submit" class="btn waves-effect indigo darken-4">UPLOAD
+<i class="material-icons left">file_upload</i></button>
+</form>
+</p>
+</div>
+</div>
 <script type="text/javascript">
-    $(document).ready(function(){
-      $('.tooltipped').tooltip({delay: 50});
-      function tooltip(){
-        Materialize.toast('Waiting For Confirmation', 2000);
-      }
-    });
+$(document).ready(function(){
+$('.tooltipped').tooltip({delay: 50});
+function tooltip(){
+Materialize.toast('Waiting For Confirmation', 2000);
+}
+});
 </script>
 <style type="text/css">
-    @media only screen and (min-width: 993px) {
-    .container {
-    width: 95% !important;
-    }
-    }
-    .card.active {
-    background: aliceblue;
-    }
-    .card-content.result-title {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    }
-    .btn {
-    background-color: #1a237e;
-    }
-    .listelements.active {
-    background-color: crimson;
-    color: white;
-    }
-    .logoutButton{
-    position: absolute;
-    right: 2%;
-    bottom: 10%;
-    }
-    .tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-    background: #1a237e;
-    border-radius: 100%;
-    color: white;
-    width: 18px;
-    height: 20px;
-    text-align: center;
-    margin-top: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    }
-    .tooltip .tooltiptext::after {
-    content: " ";
-    position: absolute;
-    top: 33%;
-    right: 100%; /* To the left of the tooltip */
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent black transparent transparent;
-    }
-    .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    left: 110%;
-    margin-left: 8px;
-    }
-    .tooltip:hover .tooltiptext {
-    visibility: visible;
-    }
-    .fields{
-    padding-top: 18px !important
-    }
-    .error{
-    color: red;
-    font-weight: 400;
-    }
-    .select-wrapper input.select-dropdown {
-    position: relative;
-    cursor: pointer;
-    background-color: aliceblue;
-    border: none;
-    border-bottom: 0 !important;
-    outline: none;
-    height: 3rem;
-    line-height: 3rem;
-    width: 100%;
-    font-size: 1rem;
-    margin: 0 0 20px 0;
-    padding: 0;
-    display: block;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-indent: 1em;
+@media only screen and (min-width: 993px) {
+.container {
+width: 95% !important;
+}
+}
+.card.active {
+background: aliceblue;
+}
+.card-content.result-title {
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.btn {
+background-color: #1a237e;
+}
+.listelements.active {
+background-color: crimson;
+color: white;
+}
+.logoutButton{
+position: absolute;
+right: 2%;
+bottom: 10%;
+}
+.tooltip {
+position: relative;
+display: inline-block;
+border-bottom: 1px dotted black;
+background: #1a237e;
+border-radius: 100%;
+color: white;
+width: 18px;
+height: 20px;
+text-align: center;
+margin-top: 14px;
+font-weight: bold;
+cursor: pointer;
+}
+.tooltip .tooltiptext::after {
+content: " ";
+position: absolute;
+top: 33%;
+right: 100%; /* To the left of the tooltip */
+margin-top: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: transparent black transparent transparent;
+}
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+position: absolute;
+z-index: 1;
+top: -5px;
+left: 110%;
+margin-left: 8px;
+}
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+.fields{
+padding-top: 18px !important
+}
+.error{
+color: red;
+font-weight: 400;
+}
+.select-wrapper input.select-dropdown {
+position: relative;
+cursor: pointer;
+background-color: aliceblue;
+border: none;
+border-bottom: 0 !important;
+outline: none;
+height: 3rem;
+line-height: 3rem;
+width: 100%;
+font-size: 1rem;
+margin: 0 0 20px 0;
+padding: 0;
+display: block;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+text-indent: 1em;
 }
 </style>
 <script>
-    $(document).ready(function() {
-     $('input#input_text, textarea#textarea1').characterCounter();
-
-    });
+$(document).ready(function() {
+$('input#input_text, textarea#textarea1').characterCounter();
+});
 </script>
